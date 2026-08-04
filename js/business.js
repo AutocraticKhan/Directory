@@ -57,24 +57,11 @@ function renderPhotoMosaic(biz) {
 
   const photos = biz.photos || [];
   const mainPhoto = photos[0] || biz.image;
-  const gridPhotos = photos.slice(1, 5);
-
-  const gridHtml = gridPhotos.map(p => `
-    <div class="photo-mosaic-grid-item">
-      <img src="${p}" alt="Business photo">
-    </div>
-  `).join('');
 
   container.innerHTML = `
     <div class="photo-mosaic-main">
       <img src="${mainPhoto}" alt="${biz.name}">
     </div>
-    <div class="photo-mosaic-grid">
-      ${gridHtml}
-    </div>
-    <button class="photo-mosaic-all-btn">
-      <i class="fa-solid fa-grip"></i> See all ${biz.photoCount} photos
-    </button>
   `;
 }
 
