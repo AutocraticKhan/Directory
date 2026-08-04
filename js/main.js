@@ -136,27 +136,17 @@ function initFilterBadges() {
 }
 
 // ---- Init: Load all data and render ----
-async function init() {
+function init() {
   try {
-    const [categoriesRes, businessesRes, searchesRes] = await Promise.all([
-      fetch('data/categories.json'),
-      fetch('data/businesses.json'),
-      fetch('data/popular-searches.json')
-    ]);
-
-    const categories = await categoriesRes.json();
-    const businesses = await businessesRes.json();
-    const searches = await searchesRes.json();
-
-    renderCategories(categories);
-    renderBusinesses(businesses);
-    renderPopularSearches(searches);
+    renderCategories(LOCAL_DATA.categories);
+    renderBusinesses(LOCAL_DATA.businesses);
+    renderPopularSearches(LOCAL_DATA.popularSearches);
     initFilterBadges();
   } catch (err) {
-    console.error('Failed to load data:', err);
+    console.error('Failed to render data:', err);
     const grid = document.getElementById('business-grid');
     if (grid) {
-      grid.innerHTML = '<p style="text-align:center; padding:2rem; color:#6b7280;">Failed to load business data. Please run via a local server (e.g., <code>python -m http.server</code>).</p>';
+      grid.innerHTML = '<p style="text-align:center; padding:2rem; color:#6b7280;">Failed to render data. Please check the console for errors.</p>';
     }
   }
 }

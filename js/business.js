@@ -1,6 +1,6 @@
 /* ============================================
    DiscoverLocal - Business Detail Page JS
-   Reads URL param, fetches JSON, renders page
+   Reads URL param, loads embedded data, renders page
    ============================================ */
 
 // ---- Helper: Generate star rating HTML ----
@@ -303,13 +303,12 @@ function renderSidebarHours(biz) {
 }
 
 // ---- Init: Load business data and render ----
-async function init() {
+function init() {
   const id = getQueryParam('id') || '1';
 
   try {
-    const res = await fetch(`../data/businesses/${id}.json`);
-    if (!res.ok) throw new Error('Business not found');
-    const biz = await res.json();
+    const biz = LOCAL_DATA.businessDetails[id];
+    if (!biz) throw new Error('Business not found');
 
     // Update page title
     document.title = `${biz.name} - DiscoverLocal`;
@@ -326,7 +325,7 @@ async function init() {
     console.error('Failed to load business data:', err);
     const main = document.querySelector('.detail-main');
     if (main) {
-      main.innerHTML = '<p style="text-align:center; padding:3rem; color:#6b7280;">Failed to load business data. Please run via a local server (e.g., <code>python -m http.server</code>).</p>';
+      main.innerHTML = '<p style="text-align:center; padding:3rem; color:#6b7280;">Failed to load business data. Please check the console for errors.</p>';
     }
   }
 }
