@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business - DiscoverLocal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ===== Navigation ===== -->
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <a href="../index.html">
+                    <span class="navbar-logo-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </span>
+                    <span>Discover<span class="navbar-logo-text-gray">Local</span></span>
+                </a>
+            </div>
+
+            <!-- Nav Inline Search Bar (Desktop) -->
+            <div class="navbar-search">
+                <div class="navbar-search-wrapper">
+                    <div class="navbar-search-field">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="tacos, plumbers, hair salon...">
+                    </div>
+                    <div class="navbar-search-field">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" value="San Francisco, CA">
+                    </div>
+                    <button class="navbar-search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Action Navigation Buttons -->
+            <div class="navbar-actions">
+                <a href="#">Write a Review</a>
+                <a href="#" class="btn-outline">Log In</a>
+                <a href="#" class="btn-primary">Sign Up</a>
+            </div>
+
+            <!-- Mobile menu toggle -->
+            <div class="navbar-mobile-toggle">
+                <button type="button" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-search">
+                <input type="text" placeholder="Find tacos, dentist, shop...">
+                <input type="text" placeholder="Near San Francisco, CA">
+                <button>Search</button>
+            </div>
+            <a href="#">Write a Review</a>
+            <div class="mobile-menu-buttons">
+                <a href="#" class="btn-outline">Log In</a>
+                <a href="#" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Photo Mosaic Header (Dynamic) ===== -->
+    <div id="photo-mosaic" class="photo-mosaic">
+        <!-- Rendered by js/business.js -->
+    </div>
+
+    <!-- ===== Main Content Area ===== -->
+    <div class="container detail-container">
+
+        <!-- Left Column: Primary Details -->
+        <div class="detail-main">
+
+            <!-- Header Info (Dynamic) -->
+            <div id="detail-header" class="detail-header">
+                <!-- Rendered by js/business.js -->
+            </div>
+
+            <!-- Popular Dishes (Dynamic) -->
+            <div id="dishes-section" class="detail-section" style="display:none;">
+                <!-- Rendered by js/business.js -->
+            </div>
+
+            <!-- Amenities (Dynamic) -->
+            <div id="amenities-section" class="detail-section" style="display:none;">
+                <!-- Rendered by js/business.js -->
+            </div>
+
+            <!-- Reviews (Dynamic) -->
+            <div id="reviews-section" class="detail-section">
+                <!-- Rendered by js/business.js -->
+            </div>
+
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <div class="detail-sidebar">
+            <div class="detail-sidebar-inner">
+
+                <!-- Contact & Location Card (Dynamic) -->
+                <div id="sidebar-contact" class="sidebar-card">
+                    <!-- Rendered by js/business.js -->
+                </div>
+
+                <!-- Hours Card (Dynamic) -->
+                <div id="sidebar-hours" class="sidebar-card">
+                    <!-- Rendered by js/business.js -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== Simple Footer ===== -->
+    <footer class="simple-footer">
+        <p>&copy; 2026 DiscoverLocal Inc. All rights reserved.</p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/business.js"></script>
+</body>
+</html>

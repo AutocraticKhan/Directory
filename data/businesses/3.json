@@ -1,0 +1,94 @@
+{
+  "id": 3,
+  "name": "Urban Grind Coffee Co.",
+  "price": "$",
+  "rating": 4.2,
+  "reviewCount": 198,
+  "categories": ["Coffee & Tea", "Bakery"],
+  "claimed": true,
+  "status": "Open Now",
+  "statusType": "open",
+  "hoursRange": "6:30 AM - 7:00 PM",
+  "photos": [
+    "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1453614510291-ff10845e1f7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1559054663-e8c1ab48b5e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1495474472287-4d71cddff5d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1442512591343-d1b6f7e1f7b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  ],
+  "photoCount": 56,
+  "popularDishes": [
+    {
+      "name": "Oat Milk Latte",
+      "image": "https://images.unsplash.com/photo-1559054663-e8c1ab48b5e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "photoCount": 22,
+      "reviewCount": 18
+    },
+    {
+      "name": "Almond Croissant",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71cddff5d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "photoCount": 9,
+      "reviewCount": 11
+    },
+    {
+      "name": "Cold Brew",
+      "image": "https://images.unsplash.com/photo-1442512591343-d1b6f7e1f7b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "photoCount": 14,
+      "reviewCount": 7
+    }
+  ],
+  "amenities": [
+    { "name": "Offers Delivery", "available": true },
+    { "name": "Offers Takeout", "available": true },
+    { "name": "Free Wi-Fi", "available": true },
+    { "name": "Outdoor Seating", "available": true },
+    { "name": "Vegan Options", "available": true },
+    { "name": "Parking Available", "available": false }
+  ],
+  "reviews": [
+    {
+      "userName": "Marcus L.",
+      "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45c63?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "location": "San Francisco, CA",
+      "friends": 67,
+      "reviewCount": 143,
+      "rating": 4,
+      "date": "5 days ago",
+      "text": "Cozy spot with fast Wi-Fi and the best oat milk lattes in the Mission district. The baristas really know their craft. Only downside is limited seating during peak morning hours - get there before 8 AM if you want a table!",
+      "photo": "https://images.unsplash.com/photo-1559054663-e8c1ab48b5e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+      "useful": 6,
+      "funny": 1,
+      "cool": 2
+    },
+    {
+      "userName": "Priya N.",
+      "avatar": "https://images.unsplash.com/photo-1534570185-6d8dcf3a3a3a?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "location": "Daly City, CA",
+      "friends": 34,
+      "reviewCount": 78,
+      "rating": 5,
+      "date": "2 weeks ago",
+      "text": "Their almond croissant is to die for! Flaky, buttery, and not too sweet. The cold brew is smooth and never bitter. I come here every weekend to work remotely - great atmosphere and friendly staff.",
+      "photo": null,
+      "useful": 3,
+      "funny": 0,
+      "cool": 1
+    }
+  ],
+  "website": "urbangrindcoffee.com",
+  "phone": "(415) 555-0341",
+  "address": {
+    "street": "789 Valencia St",
+    "neighborhood": "Mission District",
+    "city": "San Francisco, CA 94110"
+  },
+  "weeklyHours": [
+    { "day": "Mon", "hours": "6:30 AM - 7:00 PM" },
+    { "day": "Tue", "hours": "6:30 AM - 7:00 PM" },
+    { "day": "Wed", "hours": "6:30 AM - 7:00 PM" },
+    { "day": "Thu", "hours": "6:30 AM - 7:00 PM", "isToday": true },
+    { "day": "Fri", "hours": "6:30 AM - 8:00 PM" },
+    { "day": "Sat", "hours": "7:00 AM - 8:00 PM" },
+    { "day": "Sun", "hours": "7:00 AM - 6:00 PM" }
+  ]
+}

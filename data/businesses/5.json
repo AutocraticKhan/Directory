@@ -1,0 +1,94 @@
+{
+  "id": 5,
+  "name": "Apex Auto & Brake Care",
+  "price": "$$",
+  "rating": 4.6,
+  "reviewCount": 92,
+  "categories": ["Auto Repair", "Mechanics"],
+  "claimed": true,
+  "status": "Open Now",
+  "statusType": "open",
+  "hoursRange": "7:30 AM - 6:00 PM",
+  "photos": [
+    "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1632823461550-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1597212720158-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1530268292-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1542362566-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  ],
+  "photoCount": 19,
+  "popularDishes": [
+    {
+      "name": "Brake Pad Replacement",
+      "image": "https://images.unsplash.com/photo-1632823461550-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "photoCount": 5,
+      "reviewCount": 12
+    },
+    {
+      "name": "Full Diagnostic Service",
+      "image": "https://images.unsplash.com/photo-1597212720158-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "photoCount": 3,
+      "reviewCount": 8
+    },
+    {
+      "name": "Oil Change & Filter",
+      "image": "https://images.unsplash.com/photo-1530268292-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      "photoCount": 7,
+      "reviewCount": 15
+    }
+  ],
+  "amenities": [
+    { "name": "Takes Appointments", "available": true },
+    { "name": "Walk-ins Welcome", "available": true },
+    { "name": "Parking Available", "available": true },
+    { "name": "Free Wi-Fi", "available": true },
+    { "name": "Shuttle Service", "available": true },
+    { "name": "EV Charging", "available": false }
+  ],
+  "reviews": [
+    {
+      "userName": "Robert H.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "location": "San Francisco, CA",
+      "friends": 23,
+      "reviewCount": 34,
+      "rating": 5,
+      "date": "1 week ago",
+      "text": "Honest diagnostic and fast service. Didn't try to upsell me on unnecessary repairs. They showed me the worn brake pads and explained exactly what needed replacing. My car was ready the same day. Found my new go-to mechanic!",
+      "photo": "https://images.unsplash.com/photo-1632823461550-3a3a3a3a3a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+      "useful": 9,
+      "funny": 0,
+      "cool": 2
+    },
+    {
+      "userName": "Linda W.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "location": "Richmond, CA",
+      "friends": 56,
+      "reviewCount": 89,
+      "rating": 4,
+      "date": "3 weeks ago",
+      "text": "Great service and fair pricing. The free shuttle service was a lifesaver while my car was in the shop. Only wish they had EV charging stations. Overall a trustworthy shop that treats you right.",
+      "photo": null,
+      "useful": 4,
+      "funny": 1,
+      "cool": 0
+    }
+  ],
+  "website": "apexautocare.com",
+  "phone": "(415) 555-0582",
+  "address": {
+    "street": "654 Geary Blvd",
+    "neighborhood": "Richmond",
+    "city": "San Francisco, CA 94118"
+  },
+  "weeklyHours": [
+    { "day": "Mon", "hours": "7:30 AM - 6:00 PM" },
+    { "day": "Tue", "hours": "7:30 AM - 6:00 PM" },
+    { "day": "Wed", "hours": "7:30 AM - 6:00 PM" },
+    { "day": "Thu", "hours": "7:30 AM - 6:00 PM", "isToday": true },
+    { "day": "Fri", "hours": "7:30 AM - 6:00 PM" },
+    { "day": "Sat", "hours": "8:00 AM - 4:00 PM" },
+    { "day": "Sun", "hours": "Closed" }
+  ]
+}

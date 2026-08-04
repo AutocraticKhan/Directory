@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscoverLocal - Find the Best Local Businesses Near You</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== Navigation ===== -->
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <a href="#">
+                    <span class="navbar-logo-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </span>
+                    <span>Discover<span class="navbar-logo-text-gray">Local</span></span>
+                </a>
+            </div>
+
+            <!-- Nav Inline Search Bar (Desktop) -->
+            <div class="navbar-search">
+                <div class="navbar-search-wrapper">
+                    <div class="navbar-search-field">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="tacos, plumbers, hair salon...">
+                    </div>
+                    <div class="navbar-search-field">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" value="San Francisco, CA">
+                    </div>
+                    <button class="navbar-search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Action Navigation Buttons -->
+            <div class="navbar-actions">
+                <a href="#">Write a Review</a>
+                <a href="#">Add Business</a>
+                <a href="#" class="btn-outline">Log In</a>
+                <a href="#" class="btn-primary">Sign Up</a>
+            </div>
+
+            <!-- Mobile menu toggle -->
+            <div class="navbar-mobile-toggle">
+                <button type="button" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-search">
+                <input type="text" placeholder="Find tacos, dentist, shop...">
+                <input type="text" placeholder="Near San Francisco, CA">
+                <button>Search</button>
+            </div>
+            <a href="#">Write a Review</a>
+            <a href="#">Add Business</a>
+            <div class="mobile-menu-buttons">
+                <a href="#" class="btn-outline">Log In</a>
+                <a href="#" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore the Best Spots in Your City</h1>
+            <p>Discover top-rated restaurants, trusted home services, vibrant nightlife, and local hidden gems with real community reviews.</p>
+
+            <!-- Dual Input Search Box -->
+            <div class="hero-search-box">
+                <form onsubmit="event.preventDefault();" class="hero-search-form">
+                    <!-- Search query input -->
+                    <div class="hero-search-field">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div class="field-content">
+                            <label>Find</label>
+                            <input type="text" placeholder="restaurants, mechanic, coffee...">
+                        </div>
+                    </div>
+                    <!-- Location input -->
+                    <div class="hero-search-field">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="field-content">
+                            <label>Near</label>
+                            <input type="text" value="San Francisco, CA">
+                        </div>
+                    </div>
+                    <!-- Search Submit Button -->
+                    <button type="submit" class="hero-search-submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Quick Pill Categories (Dynamic from JSON) -->
+            <div class="hero-pills">
+                <span class="hero-pills-label">Popular searches:</span>
+                <div id="hero-pills" style="display:flex; flex-wrap:wrap; gap:inherit;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Categories Section ===== -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2>Browse by Category</h2>
+                    <p>Explore top-rated services, dining, and activities around you</p>
+                </div>
+                <a href="#" class="view-all">
+                    View All Categories <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i>
+                </a>
+            </div>
+
+            <!-- Category Cards (Dynamic from JSON) -->
+            <div id="categories-grid" class="categories-grid"></div>
+        </div>
+    </section>
+
+    <!-- ===== Featured Listings ===== -->
+    <main class="featured-section">
+        <div class="container">
+            <!-- Filter Tabs & Sort Controls -->
+            <div class="featured-header">
+                <div>
+                    <h2>Featured & Top Rated Places</h2>
+                    <p>Based on recent customer reviews in San Francisco, CA</p>
+                </div>
+
+                <!-- Quick Filter Badges -->
+                <div class="filter-badges">
+                    <button class="filter-badge active">
+                        <i class="fa-solid fa-sliders"></i> All Results
+                    </button>
+                    <button class="filter-badge">Open Now</button>
+                    <button class="filter-badge">Offers Delivery</button>
+                    <button class="filter-badge">$$ Price</button>
+                    <button class="filter-badge">Outdoor Seating</button>
+                </div>
+            </div>
+
+            <!-- Featured Listings Grid (Dynamic from JSON) -->
+            <div id="business-grid" class="business-grid"></div>
+
+            <!-- Load More CTA -->
+            <div class="load-more-wrapper">
+                <button class="load-more-btn">
+                    <i class="fa-solid fa-arrows-rotate"></i> Load More Businesses
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== Map Section ===== -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-grid">
+                <div>
+                    <span class="map-section-label">Interactive Discovery</span>
+                    <h2>Explore Local Neighborhood Hotspots visually on Map</h2>
+                    <p>Find places right around the block. Filter live by open hours, distance, and top-rated neighborhood favorites.</p>
+
+                    <div class="map-features">
+                        <div class="map-feature">
+                            <div class="map-feature-icon">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+                            <div>
+                                <h4>Real-Time Distance & Route</h4>
+                                <p>Get precise walking and driving directions straight from local business listings.</p>
+                            </div>
+                        </div>
+                        <div class="map-feature">
+                            <div class="map-feature-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>Verified Local Reviews</h4>
+                                <p>Read honest feedback, photos, and recommendations from real neighbors.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="map-btn">
+                        <i class="fa-solid fa-map"></i> Open Interactive Map
+                    </button>
+                </div>
+
+                <!-- Map Mockup Preview -->
+                <div class="map-preview">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Map View">
+                    <div class="map-preview-overlay"></div>
+                    <div class="map-pin map-pin-1">
+                        <i class="fa-solid fa-utensils"></i> $4.5 ★
+                    </div>
+                    <div class="map-pin map-pin-2">
+                        <i class="fa-solid fa-coffee"></i> $4.8 ★
+                    </div>
+                    <div class="map-pin map-pin-3">
+                        <i class="fa-solid fa-scissors"></i> $4.9 ★
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Business Owner CTA ===== -->
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <div>
+                    <h3>Are you a Business Owner?</h3>
+                    <p>Claim your business page for free to update photos, respond to reviews, and reach nearby customers.</p>
+                </div>
+            </div>
+            <a href="#" class="cta-btn">Claim Free Business Page</a>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About DiscoverLocal</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press & News</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Trust & Safety</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="#">Write a Review</a></li>
+                        <li><a href="#">Add a Business</a></li>
+                        <li><a href="#">Local Collections</a></li>
+                        <li><a href="#">Events & Activities</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>DiscoverLocal for Business</h4>
+                    <ul>
+                        <li><a href="#">Claim your Business</a></li>
+                        <li><a href="#">Advertise on DiscoverLocal</a></li>
+                        <li><a href="#">Business Support</a></li>
+                        <li><a href="#">Table Reservations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Languages & Region</h4>
+                    <select class="footer-select">
+                        <option>English (US)</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                    </select>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DiscoverLocal Inc. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Ad Choices</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
