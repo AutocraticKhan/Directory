@@ -296,6 +296,34 @@ input {
 
 .navbar-actions .btn-primary:hover { background: var(--brand-700); }
 
+/* Admin Button */
+.btn-admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: var(--slate-900);
+  color: #fff !important;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.btn-admin:hover { background: var(--slate-800); }
+
+.mobile-menu .btn-admin {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--slate-900);
+  color: #fff;
+  border-radius: 0.5rem;
+  margin: 0.25rem 0;
+}
+
+.mobile-menu .btn-admin:hover { background: var(--slate-800); }
+
 /* Mobile Menu Toggle */
 .navbar-mobile-toggle {
   display: flex;

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscoverLocal Admin</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ===== Admin Shell ===== -->
+    <div class="admin-shell">
+
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <a href="#" class="admin-logo" onclick="navigateTo('overview'); return false;">
+                    <span class="admin-logo-icon"><i class="fa-solid fa-compass"></i></span>
+                    <span>Discover<span class="admin-logo-gray">Local</span></span>
+                </a>
+                <span class="admin-sidebar-badge">CMS</span>
+            </div>
+
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav-item active" data-route="overview" onclick="navigateTo('overview'); return false;">
+                    <i class="fa-solid fa-gauge-high"></i> Overview
+                </a>
+                <a href="#" class="admin-nav-item" data-route="entity-types" onclick="navigateTo('entity-types'); return false;">
+                    <i class="fa-solid fa-cubes"></i> Entity Types
+                </a>
+                <a href="#" class="admin-nav-item" data-route="relation-types" onclick="navigateTo('relation-types'); return false;">
+                    <i class="fa-solid fa-code-branch"></i> Relation Types
+                </a>
+                <a href="#" class="admin-nav-item" data-route="entries" onclick="navigateTo('entries'); return false;">
+                    <i class="fa-solid fa-database"></i> Entries
+                </a>
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <a href="../index.html" class="admin-nav-item">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Site
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+
+            <!-- Topbar -->
+            <header class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <h1 id="admin-page-title">Overview</h1>
+                    <p id="admin-page-subtitle">Manage your site content</p>
+                </div>
+                <div class="admin-topbar-actions">
+                    <button class="admin-btn admin-btn-outline" onclick="CMS_API.importFile()">
+                        <i class="fa-solid fa-file-import"></i> Import
+                    </button>
+                    <button class="admin-btn admin-btn-primary" onclick="CMS_STORE.downloadExport()">
+                        <i class="fa-solid fa-download"></i> Export
+                    </button>
+                </div>
+            </header>
+
+            <!-- Route Content -->
+            <main id="admin-content" class="admin-content">
+                <!-- Rendered by admin.js -->
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="admin-toast-container" class="admin-toast-container"></div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="admin-import-input" accept=".json,.js" style="display:none;">
+
+    <!-- Admin Scripts -->
+    <script src="../js/cms-adapter.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/cms-store.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/entityTypesScreen.js"></script>
+    <script src="js/relationTypesScreen.js"></script>
+    <script src="js/entriesScreen.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

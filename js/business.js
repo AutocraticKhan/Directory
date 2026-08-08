@@ -294,7 +294,7 @@ function init() {
   const id = getQueryParam('id') || '1';
 
   try {
-    const biz = LOCAL_DATA.businessDetails[id];
+    const biz = SITE_DATA.businessDetails[id];
     if (!biz) throw new Error('Business not found');
 
     // Update page title

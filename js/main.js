@@ -138,9 +138,9 @@ function initFilterBadges() {
 // ---- Init: Load all data and render ----
 function init() {
   try {
-    renderCategories(LOCAL_DATA.categories);
-    renderBusinesses(LOCAL_DATA.businesses);
-    renderPopularSearches(LOCAL_DATA.popularSearches);
+    renderCategories(SITE_DATA.categories);
+    renderBusinesses(SITE_DATA.businesses);
+    renderPopularSearches(SITE_DATA.popularSearches);
     initFilterBadges();
   } catch (err) {
     console.error('Failed to render data:', err);
