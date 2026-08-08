@@ -25,6 +25,11 @@ const ROUTES = {
     title: 'Entries',
     subtitle: 'Create and edit content instances',
     render: renderEntriesScreen
+  },
+  'json-output': {
+    title: 'JSON Output',
+    subtitle: 'Generate, copy, and publish your site data',
+    render: renderJsonOutputScreen
   }
 };
 
